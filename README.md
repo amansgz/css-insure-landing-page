@@ -28,6 +28,6 @@ Users should be able to:
   </h3>
 </div>
 
-![Design preview for the Insure landing page challenge](./images/desktop-preview.jpg)
+![Design preview for the Insure landing page challenge](./images/screenshot.png)
 
 This application/site was created as a submission to <a href= "https://www.frontendmentor.io/">Frontend Mentor Challenges</a> 
