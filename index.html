@@ -2,26 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-
-  <!-- Fonts-->
-  <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Icons-->
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-
   <!-- Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-  <!-- Styles-->  
+  <script src="https://kit.fontawesome.com/1fbae0c810.js" crossorigin="anonymous"></script>
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <!-- SCRIPTS -->
+  <script src="./scripts/main.js" defer></script>
+  <!-- Styles -->  
   <link rel="stylesheet" href="./styles/styles.css">
   <link rel="stylesheet" href="./styles/media-queries.css">
-
   <title>Frontend Mentor | Insure landing page</title>
 </head>
-<body>
 
+<body>
   <header class="header">   
     <nav class= "navbar"> 
       <div class="top_bar">
@@ -81,49 +78,50 @@
     </section>
 
 
-    <section class="services">
-      <svg width="195" height="504" class="hide img-left-desktop">
-          <use href="#bg-pattern-left-desktop"></use>
+    <section class= "services">
+      <svg class= "hide img-left-desktop" 
+        width= "195" height= "504">
+          <use href= "#bg-pattern-left-desktop"></use>
       </svg>
-      <h2 class="services_title">
+      <h2 class= "services_title">
         We’re different
       </h2>
 
-      <div class="services_articles">
-        <article class="service">
+      <div class= "services_articles">
+        <article class= "service">
           <svg width="86" height="86">
             <use href="#icon-snappy-process"></use>
           </svg>  
           
-          <h3 class="service_title">
+          <h3 class= "service_title">
             Snappy Process
           </h3>
-          <p class="service_text">
+          <p class= "service_text">
             Our application process can be completed in minutes, not hours. Don’t get 
             stuck filling in tedious forms.    
           </p>
         </article>
         
-        <article class="service">
-          <svg width="86" height="86" class="service_svg">
+        <article class= "service">
+          <svg width= "86" height= "86" class= "service_svg">
             <use href="#icon-affordable-prices"></use>
           </svg>
-          <h3 class="service_title">      
+          <h3 class= "service_title">      
             Affordable Prices
           </h3>
-          <p class="service_text">
+          <p class= "service_text">
             We don’t want you worrying about high monthly costs. Our prices may be low, 
             but we still offer the best coverage possible.  
           </p>
         </article>
-        <article class="service">
-          <svg width="86" height="86">
+        <article class= "service">
+          <svg width= "86" height="86">
             <use href="#icon-people-first"></use>
           </svg>
-          <h3 class="service_title">
+          <h3 class= "service_title">
             People First
           </h3>
-          <p class="service_text">
+          <p class= "service_text">
             Our plans aren’t full of conditions and clauses to prevent payouts. We make 
             sure you’re covered when you need it.  
           </p>
@@ -131,40 +129,49 @@
       </div>  
     </section>
 
-    <div class="info">
-      <p class="info_text">
+    <div class= "info">
+      <p class= "info_text">
         Find out more about how we work
       </p>
-      <a class="info_link">How we work</a>
+      <a class= "info_link">How we work</a>
     </div>
 
   </main>
 
   <footer class= "footer">
-    <div class="footer_bar">
-      <svg width="112" height="18">
+    <div class= "footer_bar">
+      <svg width= "112" height="18">
         <use href="#nav-logo"></use>
       </svg>  
        
-      <ul class= "social-links">
-        <li class= "social-links_item">
-          <i class="fab fa-facebook"></i>
+      <ul class= "social__menu">
+        <li>
+          <a href= "#" aria-label= "Go to Facebook">
+            <i class="fab fa-facebook"></i>
+          </a>
         </li>
-        <li class= "social-links_item">
-          <i class="fab fa-twitter"></i>
+        <li>
+          <a href= "#" aria-label= "Go to Twitter">
+            <i class="fab fa-twitter"></i>
+          </a>  
         </li>
-        <li class= "social-links_item">
-          <i class="fab fa-pinterest"></i>
+        <li>
+          <a href= "#" aria-label= "Go to Pinterest">
+            <i class="fab fa-pinterest"></i>
+          </a>  
         </li>
-        <li class= "social-links_item">
-          <i class="fab fa-instagram"></i>
+        <li>
+          <a href= "#" aria-label= "Go to Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
         </li>
       </ul>
     </div>
-    <hr class="line"/>
 
-    <div class="footer_links">
-      <div class="footer_links-group">
+    <hr class= "line"/>
+
+    <div class= "footer_links">
+      <div class= "footer_links-group">
         <h2>Our company</h2>
         <ul>
           <li>How we work</li>
@@ -173,7 +180,7 @@
           <li>Reviews</li>
         </ul>
       </div>  
-      <div class="footer_links-group">
+      <div class= "footer_links-group">
         <h2>Help me</h2>
         <ul>
           <li>FAQ</li>
@@ -182,7 +189,7 @@
           <li>Cookies</li>
         </ul>
       </div>
-      <div class="footer_links-group">
+      <div class= "footer_links-group">
         <h2>Contact</h2>
         <ul>
           <li>Sales</li>
@@ -191,7 +198,7 @@
         </ul>
       </div>  
 
-      <div class="footer_links-group">
+      <div class= "footer_links-group">
         <h2>Others</h2>
         <ul>
           <li>Careers</li>
@@ -203,7 +210,7 @@
   </footer>
 
 
-  <script src="./scripts/main.js"></script>
+  
 
 <!-- SVG Images -->
 <div class="hide">

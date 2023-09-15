@@ -23,6 +23,7 @@
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
+	outline: 1px solid red;
 }
 
 body {
@@ -256,14 +257,14 @@ a {
 	background-size: cover;
 	background-position: bottom;
 }
-.social-links {
+.social__menu {
 	list-style-type: none;
 	display: flex;
 	align-items: center;
 	gap: .8rem;
 	padding-top: 2rem;
 }
-.social-links_item {
+.social__menu li {
 	font-size: 1.6rem;
 	color: var(--dark-grayish-violet);
 }
