@@ -273,26 +273,26 @@ a {
 	border: 1px solid var(--dark-grayish-violet);
 	margin: 2rem auto 3rem;
 }
-.footer_links {
+.footer__nav {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	text-transform: uppercase;
 }
-.footer_links-group {
+.links__container {
 	text-align: center;
 	margin-bottom: 2rem;
 }
-.footer_links-group h2 {
+.links__container h2 {
 	margin-bottom: 1.5rem;
 	font-size: 1rem;
 	color: var(--dark-grayish-violet);
 }
-.footer_links-group ul {
+.links__container ul {
 	list-style-type: none;
 	font-weight: 700;
 }
-.footer_links-group ul li {
+.links__container ul li {
 	padding: .5rem;
 	font-size: .8rem;
 }
