@@ -196,58 +196,46 @@
 		color:  var(--very-dark-violet);
 		cursor:  pointer;
 	}
-	/*----------------------------------------
-	 		5.FOOTER
-	----------------------------------------*/
+	/*/**********************
+	 	5.FOOTER
+	/***********************/
 	.footer {
 		background-image: url('../images/bg-pattern-footer-desktop.svg');
 		background-repeat: no-repeat;
-		background-position: top left;
-		
+		background-position: top left;		
 	}
-	.line {
-		display: none;
+	.footer__grid__container {
+		grid-template-columns: repeat(5,1fr);
+		grid-template-rows: 100px 300px;
+		place-items: start;
 	}
-	.footer_bar {
-		flex-direction: row;
-		justify-content: space-between;
-		width: 88%;
-		height: 164px;
-		margin: 0 auto;
-		border-bottom: 1px solid var(--dark-grayish-violet);
-		background-image: none;
+	.footer__logo {
+		grid-column: 1 / 5;
+		grid-row: 1 / 2;
 	}
-	.social-links {
-		gap: 1rem;
+	.social__menu {
+		grid-column: 5 / 6;
+		grid-row: 1 / 2;
+		justify-self: flex-end;
 	}
-	.social-links_item:hover {
-		color: 	var(--very-dark-violet);
-		cursor: pointer;
-	}
-	.footer_links {
-		flex-direction: row;
-		justify-content: space-around;
-		align-items: flex-start;
-		padding-top: 4rem;
-		background-color: transparent;
-	}
-	.footer_links-group {
+	.links__container {
 		text-align: left;
 	}
-	.footer_links-group h2 {
-		font-family: 'Karla', sans-serif;
-		margin: 0;
-		margin-bottom: 2rem;
-		padding-top: 0;
-		font-size: .9rem;
+	.links__container:nth-child(1) {
+		grid-column: 1 / 2;
+		grid-row: 2 / 3;
 	}
-	.footer_links-group ul li{
-		padding-left: 0;
-		font-size: .8rem;
+	.links__container:nth-child(2) {
+		grid-column: 2 / 3;
+		grid-row: 2 / 3;
 	}
-	.footer_links-group ul li:hover {
-		text-decoration: underline;
-		cursor: pointer;
+	.links__container:nth-child(3) {
+		grid-column: 3 / 4;
+		grid-row: 2 / 3;
+	}
+	.links__container:nth-child(4) {
+		grid-column: 4 / 5;
+		grid-row: 2 / 3;
 	}
 }
 
@@ -318,17 +306,6 @@
 		width: 425px;
 		font-size: 3rem;
 	}
-	/*----------------------------------------
-	 		5.FOOTER
-	----------------------------------------*/
-	.footer_bar {
-		width: 80%;
-	}
-	.footer_links {
-		align-items: flex-start;
-		width: 80%;
-		padding-left: 5rem;
-	}
 }
 
 @media(min-width: 1200px) {
@@ -355,15 +332,7 @@
 	.services_articles {
 		gap: 6rem;	
 	}
-	/*----------------------------------------
-	 		5.FOOTER
-	----------------------------------------*/
-	.footer_bar {
-		width: 85%;
-	}
-	.footer_links {
-		padding-left: 2rem;
-	}
+	
 }
 
 @media(min-width: 1440px) {
