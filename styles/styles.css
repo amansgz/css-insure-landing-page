@@ -1,14 +1,14 @@
 /*----------------------------------------
 - GENERAL STYLES
 - 1.HEADER
-- 2.HERO SECTION
+- 2.INTRO SECTION
 - 3.SERVICES SECTION
-- 4.INFO-DETAILS
+- 4.HOW-WE-WORK SECTION
 - 5.FOOTER
 ------------------------------------------*/
 
 /*----------------------------------------
-			GENERAL STYLES
+	GENERAL STYLES
 -----------------------------------------*/ 
 :root {
 	/* COLORS */
@@ -17,29 +17,42 @@
 	--very-dark-violet: hsl(270, 9%, 17%);
 	--dark-grayish-violet: hsl(273, 4%, 51%);
 	--very-light-gray: hsl(0, 0%, 98%);
-	--font-color-light: #FFF;	
 
 	/* FONT FAMILY */
 	--ff-primary: 'Karla', sans-serif;
-	--ff-secondary: 'DM Serif Display', serif; /* h2 */
+	--ff-secondary: 'DM Serif Display', serif;
 
 	/* FONT SIZES */
-	--font-size-title: clamp(2.8rem, 5vw, 5rem);
-	--font-size-text: clamp(1.15rem, 1.25vw, 1.5rem);
-	--font-size-links: clamp(1rem, 1vw, 1.15rem);
+	--font-size-h1: 4rem;
+	--font-size-h2: 4rem;
+	--font-size-h3: 2rem;
+	--font-size-h4: 4rem;
+	--font-size-text: 1.6rem;
+	--font-size-links: clamp(1.4rem, calc(1.4rem + ((1vw - 0.32rem) * 0.0956)), 1.5rem);
 
 	/* PADDINGS */
+	--header-block-padding: clamp(2rem, calc(2rem + ((1vw - 0.32rem) * 0.956)), 3rem);
 	--section-block-padding: clamp(2rem, calc(2rem + ((1vw - 0.32rem) * 1.912)), 4rem);
-	--section-inline-padding: clamp(2rem, calc(2rem + ((1vw - 0.32rem) * 5.7361)), 8rem);
-}
 
+	--section-inline-padding: clamp(2rem, calc(2rem + ((1vw - 0.32rem) * 5.7361)), 8rem);
+	
+}
+@media screen and (min-width: 1200px) {
+	:root {
+		--font-size-h1: clamp(4rem, calc(4rem + ((1vw - 0.32rem) * 2.8681)), 7rem);
+		--font-size-h2: clamp(4rem, calc(4rem + ((1vw - 0.32rem) * 1.912)), 6rem);
+		--font-size-h3: clamp(2rem, calc(2rem + ((1vw - 0.32rem) * 0.956)), 3rem);
+		--font-size-h4: clamp(4rem, calc(4rem + ((1vw - 0.32rem) * 0.956)), 5rem);
+		--font-size-text: clamp(1.6rem, calc(1.6rem + ((1vw - 0.32rem) * 0.1912)), 1.8rem);
+	}
+}
 *,
 *:before,
 *:after {
-	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
-	outline: 1px solid red;
+	box-sizing: border-box;
+
 }
 html {
 	font-size: 62.5%;
@@ -47,7 +60,7 @@ html {
 body {
 	max-width: 1440px;
 	margin: 0 auto;
-	font-family: 'Karla', sans-serif;
+	font-family: var(--ff-primary);
 	font-size: 1.6rem;
 	color: var(--dark-violet);
 }
@@ -67,61 +80,90 @@ a {
 	font-size: var(--font-size-links);
 	text-decoration: none;
 }
-h2 {
-	font-size: var(--font-size-title);
+h1,
+h2,
+h3 {
+	font-family: var(--ff-secondary);
 }
-
-
-/*----------------------------------------
-		1.HEADER / NAVIGATION MENU
-------------------------------------------*/
+h1 {
+	font-size: var(--font-size-h1);
+}
+h2 {
+	font-size: var(--font-size-h2);
+}
+h3 {
+	font-size: var(--font-size-h3);
+}
+.btn {
+	padding: 1rem 2.5rem;
+	text-transform: uppercase;
+	text-align: center;
+	color: var(--very-light-gray);
+	border:  1px solid #FFF;
+	transition: .1s ease;
+}
+.btn:hover,
+.btn:focus-visible {
+	background-color: #FFF;
+	color: var(--very-dark-violet);
+	cursor: pointer;
+}
+/*****************************
+	1.HEADER
+/*****************************/
 .header {
+	padding: var(--header-block-padding) var(--section-inline-padding);
 	position: sticky;
 	top: 0;
 	background-color: #FFF;
 	z-index: 999;
 }
-
-.top_bar {
+.nav__mobile {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 2rem;
+	background-color: #FFF;
 	position: relative;
 	z-index: 100;
-	background-color: #FFF;
 }
-.nav_menu {
+.nav__menu {
 	position: absolute;	
-	width: 100%;
-	height: 600px;
-	padding-top: 2rem;
-	list-style-type: none;
+	width: 88%;
+	height: 500px;
+	margin-top: 2rem;
+	background-color: var(--very-dark-violet);
 	background-image: url('../images/bg-pattern-mobile-nav.svg');
 	background-repeat: no-repeat;
 	background-position: bottom;
 	background-size: contain;
-	background-color: var(--very-dark-violet);
-	transform: translateY(-100%);
+	text-align: center;	
+	transform: translateY(-150%);
 	transition: transform .3s ease;
 	z-index: 50;
 }
-.nav_menu-item {
-	padding: 1.5rem 0;
-	text-align: center;	
+.nav__menu li {
+	margin: 4rem 0;
 }
-.nav_menu-item a {
-	padding: 1rem 6.5rem;
-	font-weight: 700;
-	color: var(--font-color-light);	
-	text-decoration: none;
+.nav__menu li a {
+	color: var(--very-light-gray);
 	text-transform: uppercase;
-	cursor: pointer;
+	transition: .1s ease;
 }
-.nav_menu-item a:focus{
-	border: 1px solid var(--font-color-light);
+.nav__menu li a:hover,
+.nav__menu li a:focus-visible {
+	font-weight: 700;
 }
-
+.nav__menu li:last-child .btn {
+	border: 1px solid white;
+	padding: 1rem 7.5rem;
+	transition: .1s ease;
+}
+.nav__menu li:last-child .btn:hover,
+.nav__menu li:last-child .btn:focus-visible {
+	background-color: white;
+	color: var(--very-dark-violet);
+	border: 1px solid var(--very-dark-violet);
+}
 /* Classes used with js */
 .show-menu {
 	transform: translateY(0);
@@ -134,138 +176,124 @@ h2 {
 	display: block;
 }
 
-
-/*----------------------------------------
-			2. HERO SECTION
------------------------------------------*/ 
-.hero-container {
-	position: relative;
-}
-.hero_info {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	height: 487px;
-	background-image: url(../images/bg-pattern-intro-left-mobile.svg);
-	background-position: top left;
-	background-repeat: no-repeat;
+/*****************************
+	2. INTRO SECTION
+/******************************/ 
+.intro__section {
 	background-color: var(--dark-violet);
-	color: var(--font-color-light);
+	position: relative;
+}
+.intro__img {
+	width: 100%;
+}
+.intro__content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 12rem 2rem;
+	color: var(--very-light-gray);
 	text-align: center;
+	position: relative;
 }
-.hero_title{
-	width: 300px;
-	font-family: 'DM Serif Display', serif;
-	font-size: 2.5rem;
-	font-weight: 400;
-	padding-bottom: 1rem;
+.intro__content:before {
+	content: url(../images/bg-pattern-intro-left-mobile.svg);
+	position: absolute;
+	top: 0;
+	left: 0;
 }
-.hero_text {
-	width: min(360px, 90%);
+.intro__content:after {
+	content: url(../images/bg-pattern-intro-right-mobile.svg);
+	position: absolute;
+	bottom: -30%;
+	right: 0;
+}
+.intro__title{
+	width: 15ch;
+	font-family: var(--ff-secondary);
+	font-weight: 300;
+	line-height: 1;
+}
+.intro__text {
+	width: 32ch;
+	margin: 3rem 0 3.5rem;
+	font-size: var(--font-size-text);
 	line-height: 1.5;
-	margin-bottom: 2rem;
-	color: var(--very-light-gray);
 }
-.hero_link {
-	text-decoration: none;
-	text-transform: uppercase;
-	color: var(--very-light-gray);
-	border:  1px solid #FFF;
-	padding: .7rem 1.7rem;
+/**********************
+	3. SERVICES
+/***********************/
+.services__section {
+	padding: 16rem var(--section-inline-padding) 12rem;
 }
-
-
-/*----------------------------------------
-			3. SERVICES SECTION
------------------------------------------*/ 
-
-.services {
+.services__container {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 	text-align: center;
-	padding: 10rem 2rem 7rem;	
-	position: relative;
-	background-image: url(../images/bg-pattern-intro-right-mobile.svg);
-	background-repeat: no-repeat;
-	background-position: top -15% right;
 }
-.services_title {
-	font-family: 'DM Serif Display', serif;
+.services__title {
+	margin-bottom: 4rem;
 	font-weight: 700;
-	font-size: 2.8rem;
-	margin-bottom: 2rem;
 	position: relative;
 }
-.services_title:before {
+.services__title:before {
 	content: '';
 	position: absolute;
-	height: 5px;
 	width: 50%;
+	height: 5px;
 	top: -40px;
 	left: 25%;
 	border-top: 1px solid var(--grayish-blue);
 }
-
-.service {
+.card {
 	padding-top: 2rem;
-}
-.service_img {
-	width: 75px;
-	margin: 0 auto;
-}
-.service_title {
-	font-family: 'DM Serif Display', serif;
-	font-size: 1.8rem;
+	margin-bottom: 3rem;
 	text-align: center;
-	margin: 1rem;
 }
-.service_text {
-	width: min(320px, 90%);
+.card__image {
+	width: 70px;
 	margin: 0 auto;
-	font-size: 1rem;
-	line-height: 1.5;
+}
+.card__title {
+	margin: 2.5rem 0;
+}
+.card__text {
 	color:  var(--dark-grayish-violet);
+	line-height: 1.5;
 }
 
-/*----------------------------------------
-			4. INFO-DETAILS
------------------------------------------*/ 
-.info {
-	height: 340px;
-	margin: 2rem;
-	color: var(--font-color-light);
-	background-color: var(--dark-violet);
+/*************************
+	4. HOW-WE-WORK SECTION
+/*************************/ 
+.how-we-work__section {
+	padding: var(--section-block-padding) var(--section-inline-padding);	
+}
+.how-we-work__container {
+	padding: 8rem var(--section-inline-padding);
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	background-color: var(--dark-violet);
 	background-image: url(../images/bg-pattern-how-we-work-mobile.svg);
 	background-repeat: no-repeat;
-	background-position: right top -1vh;
-	overflow: hidden;
+	background-position: top right;
+	background-size: contain;
+	color: var(--very-light-gray);
 }
-.info_text {
-	font-family: 'DM Serif Display', serif;
-	font-size: 2.5rem;
+.how-we-work__title {
+	margin-bottom: 3rem;
+	font-family: var(--ff-secondary);
+	font-weight: 300;
+	font-size: var(--font-size-h4);
 	text-align: center;
-	margin: 1rem;
-	width: 300px;
-}
-.info_link {
-	text-decoration: none;
-	text-transform: uppercase;
-	border:  1px solid #FFF;
-	padding: .8rem 1.5rem;
-	margin-top: 1rem;
 }
 /**********************
 	5. FOOTER
 /**********************/ 
 .footer {	
-	padding: var(--section-block-padding) var(--section-inline-padding);
+	padding: 6rem var(--section-inline-padding) 2rem;
 	background-color: var(--very-light-gray);
 }
 .footer__grid__container {
@@ -275,25 +303,27 @@ h2 {
 .social__menu {
 	display: flex;
 	align-items: center;
-	gap: .8rem;
+	gap: 1.3rem;
+	margin: 3.5rem 0 5rem;
 }
-.social__menu li {
-	font-size: 1.6rem;
-	color: var(--dark-grayish-violet);
+.social__menu li a svg {
+	width: 3rem;
+	fill: var(--dark-grayish-violet);
+	transition: .1s ease;
 }
-.social__menu li a:hover,
-.social__menu li a:focus-visible {
-	color: 	var(--very-dark-violet);
+.social__menu li a svg path:hover,
+.social__menu li a svg path:focus-visible {
+	fill: var(--very-dark-violet);
 	cursor: pointer;
 }
 .links__container {
-	margin-bottom: 2rem;
+	margin-bottom: 4rem;
 	font-weight: 700;
 	text-align: center;
 	text-transform: uppercase;
 }
 .links__container h2 {
-	margin-bottom: 1.5rem;
+	margin-bottom: 3rem;
 	font-family: var(--ff-primary);
 	font-size: 1.6rem;
 	color: var(--dark-grayish-violet);
