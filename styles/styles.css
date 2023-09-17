@@ -52,7 +52,6 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-
 }
 html {
 	font-size: 62.5%;
@@ -112,13 +111,13 @@ h3 {
 	1.HEADER
 /*****************************/
 .header {
-	padding: var(--header-block-padding) var(--section-inline-padding);
 	position: sticky;
 	top: 0;
 	background-color: #FFF;
-	z-index: 999;
+	z-index: 150;
 }
 .nav__mobile {
+	padding: var(--header-block-padding) var(--section-inline-padding);
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -128,9 +127,8 @@ h3 {
 }
 .nav__menu {
 	position: absolute;	
-	width: 88%;
+	width: 100%;
 	height: 500px;
-	margin-top: 2rem;
 	background-color: var(--very-dark-violet);
 	background-image: url('../images/bg-pattern-mobile-nav.svg');
 	background-repeat: no-repeat;
