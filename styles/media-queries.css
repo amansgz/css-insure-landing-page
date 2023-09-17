@@ -152,7 +152,7 @@
 	}
 	.footer__grid__container {
 		grid-template-columns: repeat(5, 1fr);
-		grid-template-rows: 100px 220px;
+		grid-template-rows: 100px 50px 220px;
 		place-items: start;
 	}
 	.footer__logo {
@@ -165,24 +165,28 @@
 		justify-self: flex-end;
 		margin: 0;
 	}
+	.line {
+		grid-column: 1 / 6;
+		grid-row: 2 / 3;
+	}
 	.links__container {
 		text-align: left;
 	}
 	.links__container:first-child {
 		grid-column: 1 / 2;
-		grid-row: 2 / 3;
+		grid-row: 3 / 4;
 	}
 	.links__container:nth-child(1) {
 		grid-column: 2 / 3;
-		grid-row: 2 / 3;
+		grid-row: 3 / 4;
 	}
 	.links__container:nth-child(2) {
 		grid-column: 3 / 4;
-		grid-row: 2 / 3;
+		grid-row: 3 / 4;
 	}
 	.links__container:last-child {
 		grid-column: 4 / 5;
-		grid-row: 2 / 3;
+		grid-row: 3 / 4;
 	}
 }
 
